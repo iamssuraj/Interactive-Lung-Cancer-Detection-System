@@ -65,7 +65,7 @@ def main():
     if st.button("View Dataset"):
         # Toggle the state_check state when the button is clicked
         st.session_state.state_check = not st.session_state.state_check
-        st.experimental_rerun() 
+        st.rerun() 
         
     if st.session_state.state_check:
         st.dataframe(data)  # Display data as a dataframe
