@@ -15,10 +15,50 @@ from tensorflow import keras
 from imblearn.combine import SMOTETomek
 from streamlit_marquee import streamlit_marquee
 
-
+st.set_page_config(page_title="Lung Cancer Detection", page_icon=":hospital:", layout="wide")
+st.markdown("""
+<style>
+.title {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+.centerer {
+    text-align: center;
+}
+.marquee-container {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background: #FFFFFF;
+    color: #000000;
+    font-size: 16px;
+    padding: 10px;
+}
+.marquee-content {
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+}
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+</style>
+""", unsafe_allow_html=True)
 #streamlit title
-st.title("Lung Cancer Detection")
-streamlit_marquee(**{'background': "#FFFFFF",  "color": "#000000", 'content':'Machine learning models may occasionally produce false positives,  hence, it is recommended to not rely on the results predicted here.'})
+st.markdown('<h1 class="title">Lung Cancer Detection</h1>', unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <div class="marquee-container">
+        <div class="marquee-content">
+            Machine learning models may occasionally produce false positives, hence, it is recommended to not rely on the results predicted here.
+        </div>
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
 
 convert = {
     'Yes': 2,
@@ -293,24 +333,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-footer = """
-    <style>
-    a:hover
-    {
-        opacity:50%;
-    }
-    .footer 
-    {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: white;
-        text-align: center;
-    }
-    </style>
-    <div class="footer">
-        <p> Developed with ❤ by <a style='display: block; text-align: center;' href="https://iamssuraj.netlify.app/" target="_blank"> Suraj Sanganbhatla </a> </p>
-    </div>
-"""
-st.markdown(footer, unsafe_allow_html=True)
