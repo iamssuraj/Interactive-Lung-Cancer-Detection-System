@@ -17,4 +17,4 @@ jobs:
         git commit --allow-empty -m "test commit for 1 minute"
     - name: Push Changes
       run: |
-        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/username/repo.git
+        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/iamssuraj/Interactive-Lung-Cancer-Detection-System.git
