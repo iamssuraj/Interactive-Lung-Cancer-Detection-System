@@ -1,0 +1,10 @@
+name: Wake Streamlit App at 9:45 PM
+on:
+  schedule:
+    - cron: "45 21 * * *" # Runs at 9:45 PM UTC daily
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Streamlit App
+        run: curl -s "https://lung-cancer.streamlit.app/" > /dev/null
