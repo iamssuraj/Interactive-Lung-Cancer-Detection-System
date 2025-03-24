@@ -6,4 +6,3 @@ streamlit
 tensorflow
 imbalanced-learn
 streamlit-marquee
-temp-test
